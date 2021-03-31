@@ -1,8 +1,12 @@
 import express, { Request, Response } from "express";
 import { json } from "body-parser";
+import mongoose from "mongoose";
+
 import { Router } from "./api-routes";
+
 let app = express();
 var port = 3000;
+let db = mongoose.connection;
 
 app.use(json());
 app.listen(port, () => {
